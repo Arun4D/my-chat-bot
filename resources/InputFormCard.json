@@ -1,0 +1,42 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+      {
+        "type": "TextBlock",
+        "text": "Please enter incident details"
+      },
+      {
+        "type": "Input.Text",
+        "id": "applicationName",
+        "placeholder": "What is the application name?"
+      },
+      {
+        "type": "Input.Text",
+        "id": "incidentType",
+        "placeholder": "What is the incident type?"
+      },
+      {
+        "type": "Input.Text",
+        "id": "priority",
+        "placeholder": "What is priority type?"
+      },
+      {
+        "type": "Input.Text",
+        "id": "description",
+        "isMultiline": true,
+        "placeholder": "What is issue description?"
+      }
+   
+    ],
+    "actions": [
+      {
+        "type": "Action.Submit",
+        "title": "Submit",
+        "data": {
+          "x": 13
+        }
+      }
+    ]
+  }
