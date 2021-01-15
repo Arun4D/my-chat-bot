@@ -2,7 +2,7 @@
 
 Demonstrate the core capabilities of the Microsoft Bot Framework
 
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
+This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and create incident in jira cloud.
 
 ## Prerequisites
 
@@ -15,12 +15,19 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 
 ## To run the bot
 
+- Install global modules
+
+    ```bash
+    npm install -g npm
+    npm install -g yo
+    npm install -g generator-botbuilder
+    npm install -g windows-build-tools
+    ```
 - Install modules
 
     ```bash
     npm install
     ```
-
 - Start the bot
 
     ```bash
@@ -59,4 +66,3 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
 - [Restify](https://www.npmjs.com/package/restify)
 - [dotenv](https://www.npmjs.com/package/dotenv)
-"# my-chat-bot" 
