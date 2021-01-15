@@ -1,42 +1,109 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.0",
-    "body": [
-      {
-        "type": "TextBlock",
-        "text": "Please enter incident details"
-      },
-      {
-        "type": "Input.Text",
-        "id": "applicationName",
-        "placeholder": "What is the application name?"
-      },
-      {
-        "type": "Input.Text",
-        "id": "incidentType",
-        "placeholder": "What is the incident type?"
-      },
-      {
-        "type": "Input.Text",
-        "id": "priority",
-        "placeholder": "What is priority type?"
-      },
-      {
-        "type": "Input.Text",
-        "id": "description",
-        "isMultiline": true,
-        "placeholder": "What is issue description?"
-      }
-   
-    ],
-    "actions": [
-      {
-        "type": "Action.Submit",
-        "title": "Submit",
-        "data": {
-          "x": 13
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Incident Logger",
+      "wrap": true,
+      "fontType": "Default",
+      "size": "Medium",
+      "weight": "Bolder",
+      "isSubtle": true
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Incident Short Summary",
+      "label": "Summary",
+      "id": "summary"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "choices": [
+        {
+          "title": "Application 1",
+          "value": "App1"
+        },
+        {
+          "title": "Application 2",
+          "value": "App2"
         }
+      ],
+      "placeholder": "Select Application Name",
+      "wrap": true,
+      "label": "Application Name",
+      "id": "applicationName"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "choices": [
+        {
+          "title": "Blocker",
+          "value": "Blocker"
+        },
+        {
+          "title": "Error",
+          "value": "Error"
+        },
+        {
+          "title": "Info",
+          "value": "Info"
+        },
+        {
+          "title": "Warning",
+          "value": "Warning"
+        }
+      ],
+      "placeholder": "Select Incident Type default is Blocker",
+      "value": "Blocker",
+      "label": "Incident Type",
+      "id": "incidentType"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "choices": [
+        {
+          "title": "High",
+          "value": "High"
+        },
+        {
+          "title": "Low",
+          "value": "Low"
+        },
+        {
+          "title": "Medium",
+          "value": "Medium"
+        },
+        {
+          "title": "Lowest",
+          "value": "Lowest"
+        },
+        {
+          "title": "Highest",
+          "value": "Highest"
+        }
+      ],
+      "placeholder": "Select Priority",
+      "id": "priority",
+      "label": "Priority",
+      "value": "Highest"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Incident description",
+      "isMultiline": true,
+      "label": "Description",
+      "id": "description"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Submit",
+      "data": {
+        "x": 13
       }
-    ]
-  }
+    }
+  ]
+}

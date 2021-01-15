@@ -3,6 +3,7 @@
 
 const { ActivityHandler, CardFactory, MessageFactory, TurnContext } = require('botbuilder');
 const card = require('./resources/InputFormCard.json');
+const { createJiraIssue } = require('./RestClient.js');
 
 class EchoBot extends ActivityHandler {
     
@@ -13,9 +14,10 @@ class EchoBot extends ActivityHandler {
 
             if(context.activity.value)
             {
-                await context.sendActivity(`Application Name: ${context.activity.value.applicationName}\n\n\n\Incident Type: ${context.activity.value.incidentType}\n\n\n\nPriority: ${context.activity.value.priority}\n\n\n\ddescription: ${context.activity.value.description}`);;
+                createJiraIssue(context.activity.value.applicationName, context.activity.value.incidentType, context.activity.value.priority, context.activity.value.summary, context.activity.value.description);
+                await context.sendActivity(`Application Name: ${context.activity.value.applicationName}\n\n\n\Incident Type: ${context.activity.value.incidentType}\n\n\n\nPriority: ${context.activity.value.priority}\n\n\n\description: ${context.activity.value.description}`);;
             }
-            if (modifiedText && modifiedText.includes("@create") == true) {
+            if (modifiedText && modifiedText == "@createjira") {
                 const inputCard = CardFactory.adaptiveCard(card);
                 await context.sendActivity({ attachments: [inputCard] });
             }
@@ -27,7 +29,7 @@ class EchoBot extends ActivityHandler {
             for (const member of membersAdded) {
                 if (member.id !== context.activity.recipient.id) {
                     const inputCard = CardFactory.adaptiveCard(card);
-                    await context.sendActivity('Hello world!');
+                    await context.sendActivity('Welcome to Incident Logger Channel !');
                     await context.sendActivity({ attachments: [inputCard] });
                 }
             }
